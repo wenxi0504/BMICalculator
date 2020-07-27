@@ -34,7 +34,7 @@ namespace BMICalculator
 
         public BMICalculatorForm()
         {
-    InitializeComponent();
+           InitializeComponent();
         }
 
     private void userBMIinfo_Paint(object sender, PaintEventArgs e)
@@ -58,7 +58,7 @@ namespace BMICalculator
        }
 
     private void calculatorBMIButton_Click(object sender, EventArgs e)
-    {
+       {
         _myHeight = Convert.ToDouble(inputMyHeightTextBox.Text);
         _myWeight = Convert.ToDouble(inputMyWeightTextBox.Text);
 
@@ -80,12 +80,30 @@ namespace BMICalculator
                 }
 
             }
+       }
+    private void ResetButton_Click(object sender, EventArgs e)
+    {
+        inputMyHeightTextBox.Text = "";
+        inputMyWeightTextBox.Text = "";
+        BMIResultTextBox.Text = "";
+        BMIScaleTextBox.Text = "";
+    }
+        
+        private void BMICalculatorForm_Load_1(object sender, EventArgs e)
+        {
+            
+        }
 
-
-
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
-   }
+
+        private void BMIResultTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 
 }
 
