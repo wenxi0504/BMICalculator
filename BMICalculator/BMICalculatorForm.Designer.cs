@@ -178,6 +178,7 @@
             this.BMIScaleTextBox.Name = "BMIScaleTextBox";
             this.BMIScaleTextBox.Size = new System.Drawing.Size(295, 53);
             this.BMIScaleTextBox.TabIndex = 3;
+            this.BMIScaleTextBox.TextChanged += new System.EventHandler(this.BMIScaleTextBox_TextChanged);
             // 
             // BMIResultTextBox
             // 

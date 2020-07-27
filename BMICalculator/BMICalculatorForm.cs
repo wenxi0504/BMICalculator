@@ -37,25 +37,7 @@ namespace BMICalculator
            InitializeComponent();
         }
 
-    private void userBMIinfo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-    private void myHeight_Click(object sender, EventArgs e)
-        {
-
-        }
-
-    private void label1_Click(object sender, EventArgs e)
-       {
-
-       }
-
-    private void myHeightTextBox_TextChanged(object sender, EventArgs e)
-       {
-
-       }
+    
 
     private void calculatorBMIButton_Click(object sender, EventArgs e)
        {
@@ -80,7 +62,23 @@ namespace BMICalculator
                 }
 
             }
-       }
+            if (bmiResult < 18.5)
+            {
+                BMIScaleTextBox.Text = "Sorry, you are underweight ";
+            }
+            else if (bmiResult >= 18.5 && bmiResult < 25)
+            {
+                BMIScaleTextBox.Text = "Congrats ,your weight is normal ";
+            }
+            else if (bmiResult >= 25 && bmiResult < 30)
+            {
+                BMIScaleTextBox.Text = "Sorry,you are overweight ";
+            }
+            else
+            {
+                BMIScaleTextBox.Text = "Sorry,you are obese";
+            }
+        }
     private void ResetButton_Click(object sender, EventArgs e)
     {
         inputMyHeightTextBox.Text = "";
@@ -88,21 +86,42 @@ namespace BMICalculator
         BMIResultTextBox.Text = "";
         BMIScaleTextBox.Text = "";
     }
-        
+    
+
+
         private void BMICalculatorForm_Load_1(object sender, EventArgs e)
         {
             
         }
-
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
+        private void userBMIinfo_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
+        private void myHeight_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void myHeightTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
         private void BMIResultTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void BMIScaleTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 
 }
