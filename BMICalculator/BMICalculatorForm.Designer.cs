@@ -41,7 +41,7 @@
             this.resultLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.BMLScalelabel = new System.Windows.Forms.Label();
             this.BMIResultTextBox = new System.Windows.Forms.TextBox();
-            this.BMIScaleTextBox1 = new System.Windows.Forms.TextBox();
+            this.BMIScaleTextBox = new System.Windows.Forms.TextBox();
             this.calculatorBMIButton = new System.Windows.Forms.Button();
             this.BMIInfoPanel.SuspendLayout();
             this.resultLayoutPanel.SuspendLayout();
@@ -173,7 +173,7 @@
             this.resultLayoutPanel.Controls.Add(this.BMLScalelabel, 0, 2);
             this.resultLayoutPanel.Controls.Add(this.calculatorBMIButton, 0, 0);
             this.resultLayoutPanel.Controls.Add(this.BMIResultTextBox, 0, 1);
-            this.resultLayoutPanel.Controls.Add(this.BMIScaleTextBox1, 0, 3);
+            this.resultLayoutPanel.Controls.Add(this.BMIScaleTextBox, 0, 3);
             this.resultLayoutPanel.Location = new System.Drawing.Point(-1, 238);
             this.resultLayoutPanel.Name = "resultLayoutPanel";
             this.resultLayoutPanel.RowCount = 4;
@@ -207,15 +207,15 @@
             this.BMIResultTextBox.Size = new System.Drawing.Size(294, 46);
             this.BMIResultTextBox.TabIndex = 2;
             // 
-            // BMIScaleTextBox1
+            // BMIScaleTextBox
             // 
-            this.BMIScaleTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.BMIScaleTextBox1.Enabled = false;
-            this.BMIScaleTextBox1.Location = new System.Drawing.Point(3, 130);
-            this.BMIScaleTextBox1.Multiline = true;
-            this.BMIScaleTextBox1.Name = "BMIScaleTextBox1";
-            this.BMIScaleTextBox1.Size = new System.Drawing.Size(297, 53);
-            this.BMIScaleTextBox1.TabIndex = 3;
+            this.BMIScaleTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.BMIScaleTextBox.Enabled = false;
+            this.BMIScaleTextBox.Location = new System.Drawing.Point(3, 130);
+            this.BMIScaleTextBox.Multiline = true;
+            this.BMIScaleTextBox.Name = "BMIScaleTextBox";
+            this.BMIScaleTextBox.Size = new System.Drawing.Size(297, 53);
+            this.BMIScaleTextBox.TabIndex = 3;
             // 
             // calculatorBMIButton
             // 
@@ -268,7 +268,7 @@
         private System.Windows.Forms.TableLayoutPanel resultLayoutPanel;
         private System.Windows.Forms.Label BMLScalelabel;
         private System.Windows.Forms.TextBox BMIResultTextBox;
-        private System.Windows.Forms.TextBox BMIScaleTextBox1;
+        private System.Windows.Forms.TextBox BMIScaleTextBox;
         private System.Windows.Forms.Button calculatorBMIButton;
     }
 }
