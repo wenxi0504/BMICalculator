@@ -36,13 +36,13 @@
             this.myWeightlabel = new System.Windows.Forms.Label();
             this.meterslabel = new System.Windows.Forms.Label();
             this.kglabel = new System.Windows.Forms.Label();
-            this.myHeightTextBox = new System.Windows.Forms.TextBox();
-            this.myWeightTextBox = new System.Windows.Forms.TextBox();
+            this.inputMyHeightTextBox = new System.Windows.Forms.TextBox();
+            this.inputMyWeightTextBox = new System.Windows.Forms.TextBox();
             this.resultLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.calculatorButton = new System.Windows.Forms.Button();
             this.BMLScalelabel = new System.Windows.Forms.Label();
             this.BMIResultTextBox = new System.Windows.Forms.TextBox();
             this.BMIScaleTextBox1 = new System.Windows.Forms.TextBox();
+            this.calculatorBMIButton = new System.Windows.Forms.Button();
             this.BMIInfoPanel.SuspendLayout();
             this.resultLayoutPanel.SuspendLayout();
             this.SuspendLayout();
@@ -69,8 +69,8 @@
             this.BMIInfoPanel.Controls.Add(this.myWeightlabel, 0, 3);
             this.BMIInfoPanel.Controls.Add(this.meterslabel, 1, 1);
             this.BMIInfoPanel.Controls.Add(this.kglabel, 1, 3);
-            this.BMIInfoPanel.Controls.Add(this.myHeightTextBox, 1, 2);
-            this.BMIInfoPanel.Controls.Add(this.myWeightTextBox, 1, 4);
+            this.BMIInfoPanel.Controls.Add(this.inputMyHeightTextBox, 1, 2);
+            this.BMIInfoPanel.Controls.Add(this.inputMyWeightTextBox, 1, 4);
             this.BMIInfoPanel.Location = new System.Drawing.Point(-1, 46);
             this.BMIInfoPanel.Name = "BMIInfoPanel";
             this.BMIInfoPanel.RowCount = 5;
@@ -110,7 +110,7 @@
             this.myHeightLabel.ForeColor = System.Drawing.Color.Transparent;
             this.myHeightLabel.Location = new System.Drawing.Point(3, 40);
             this.myHeightLabel.Name = "myHeightLabel";
-            this.myHeightLabel.Size = new System.Drawing.Size(145, 34);
+            this.myHeightLabel.Size = new System.Drawing.Size(145, 40);
             this.myHeightLabel.TabIndex = 3;
             this.myHeightLabel.Text = "My Height";
             // 
@@ -120,9 +120,9 @@
             this.myWeightlabel.ForeColor = System.Drawing.Color.Transparent;
             this.myWeightlabel.Location = new System.Drawing.Point(3, 120);
             this.myWeightlabel.Name = "myWeightlabel";
-            this.myWeightlabel.Size = new System.Drawing.Size(145, 34);
+            this.myWeightlabel.Size = new System.Drawing.Size(145, 39);
             this.myWeightlabel.TabIndex = 5;
-            this.myWeightlabel.Text = "My Height";
+            this.myWeightlabel.Text = "My Weight";
             // 
             // meterslabel
             // 
@@ -147,30 +147,31 @@
             this.kglabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.kglabel.Click += new System.EventHandler(this.label1_Click);
             // 
-            // myHeightTextBox
+            // inputMyHeightTextBox
             // 
-            this.myHeightTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.myHeightTextBox.Location = new System.Drawing.Point(154, 83);
-            this.myHeightTextBox.Name = "myHeightTextBox";
-            this.myHeightTextBox.Size = new System.Drawing.Size(146, 46);
-            this.myHeightTextBox.TabIndex = 8;
-            this.myHeightTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.inputMyHeightTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.inputMyHeightTextBox.Location = new System.Drawing.Point(154, 83);
+            this.inputMyHeightTextBox.Name = "inputMyHeightTextBox";
+            this.inputMyHeightTextBox.Size = new System.Drawing.Size(146, 46);
+            this.inputMyHeightTextBox.TabIndex = 8;
+            this.inputMyHeightTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.inputMyHeightTextBox.TextChanged += new System.EventHandler(this.myHeightTextBox_TextChanged);
             // 
-            // myWeightTextBox
+            // inputMyWeightTextBox
             // 
-            this.myWeightTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.myWeightTextBox.Location = new System.Drawing.Point(154, 163);
-            this.myWeightTextBox.Name = "myWeightTextBox";
-            this.myWeightTextBox.Size = new System.Drawing.Size(146, 46);
-            this.myWeightTextBox.TabIndex = 9;
-            this.myWeightTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.inputMyWeightTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.inputMyWeightTextBox.Location = new System.Drawing.Point(154, 163);
+            this.inputMyWeightTextBox.Name = "inputMyWeightTextBox";
+            this.inputMyWeightTextBox.Size = new System.Drawing.Size(146, 46);
+            this.inputMyWeightTextBox.TabIndex = 9;
+            this.inputMyWeightTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // resultLayoutPanel
             // 
             this.resultLayoutPanel.ColumnCount = 1;
             this.resultLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.resultLayoutPanel.Controls.Add(this.BMLScalelabel, 0, 2);
-            this.resultLayoutPanel.Controls.Add(this.calculatorButton, 0, 0);
+            this.resultLayoutPanel.Controls.Add(this.calculatorBMIButton, 0, 0);
             this.resultLayoutPanel.Controls.Add(this.BMIResultTextBox, 0, 1);
             this.resultLayoutPanel.Controls.Add(this.BMIScaleTextBox1, 0, 3);
             this.resultLayoutPanel.Location = new System.Drawing.Point(-1, 238);
@@ -180,20 +181,9 @@
             this.resultLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.resultLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.resultLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.resultLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.resultLayoutPanel.Size = new System.Drawing.Size(303, 199);
             this.resultLayoutPanel.TabIndex = 2;
-            // 
-            // calculatorButton
-            // 
-            this.calculatorButton.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.calculatorButton.FlatAppearance.BorderSize = 0;
-            this.calculatorButton.ForeColor = System.Drawing.Color.White;
-            this.calculatorButton.Location = new System.Drawing.Point(3, 3);
-            this.calculatorButton.Name = "calculatorButton";
-            this.calculatorButton.Size = new System.Drawing.Size(294, 43);
-            this.calculatorButton.TabIndex = 0;
-            this.calculatorButton.Text = "CALCULATOR";
-            this.calculatorButton.UseVisualStyleBackColor = false;
             // 
             // BMLScalelabel
             // 
@@ -226,6 +216,19 @@
             this.BMIScaleTextBox1.Name = "BMIScaleTextBox1";
             this.BMIScaleTextBox1.Size = new System.Drawing.Size(297, 53);
             this.BMIScaleTextBox1.TabIndex = 3;
+            // 
+            // calculatorBMIButton
+            // 
+            this.calculatorBMIButton.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.calculatorBMIButton.FlatAppearance.BorderSize = 0;
+            this.calculatorBMIButton.ForeColor = System.Drawing.Color.White;
+            this.calculatorBMIButton.Location = new System.Drawing.Point(3, 3);
+            this.calculatorBMIButton.Name = "calculatorBMIButton";
+            this.calculatorBMIButton.Size = new System.Drawing.Size(294, 43);
+            this.calculatorBMIButton.TabIndex = 0;
+            this.calculatorBMIButton.Text = "CALCULATOR";
+            this.calculatorBMIButton.UseVisualStyleBackColor = false;
+            this.calculatorBMIButton.Click += new System.EventHandler(this.calculatorBMIButton_Click);
             // 
             // BMICalculatorForm
             // 
@@ -260,13 +263,13 @@
         private System.Windows.Forms.Label myWeightlabel;
         private System.Windows.Forms.Label meterslabel;
         private System.Windows.Forms.Label kglabel;
-        private System.Windows.Forms.TextBox myHeightTextBox;
-        private System.Windows.Forms.TextBox myWeightTextBox;
+        private System.Windows.Forms.TextBox inputMyHeightTextBox;
+        private System.Windows.Forms.TextBox inputMyWeightTextBox;
         private System.Windows.Forms.TableLayoutPanel resultLayoutPanel;
-        private System.Windows.Forms.Button calculatorButton;
         private System.Windows.Forms.Label BMLScalelabel;
         private System.Windows.Forms.TextBox BMIResultTextBox;
         private System.Windows.Forms.TextBox BMIScaleTextBox1;
+        private System.Windows.Forms.Button calculatorBMIButton;
     }
 }
 

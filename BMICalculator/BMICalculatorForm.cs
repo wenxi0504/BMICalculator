@@ -12,24 +12,77 @@ namespace BMICalculator
 {
     public partial class BMICalculatorForm : Form
     {
+        // private variables
+        private double _myHeight;
+        private double _myWeight;
+        private double height;
+        private double weight;
+        private double bmiResult=0;
+        //public properties
+        public double MyHeight 
+        { 
+            get{return _myHeight; }
+            set { MyHeight = value; }
+        }
+        public double MyWeight
+        {
+            get { return _myWeight; }
+            set { MyWeight = value; }
+        }
+
+
+
         public BMICalculatorForm()
         {
-            InitializeComponent();
+    InitializeComponent();
         }
 
-        private void userBMIinfo_Paint(object sender, PaintEventArgs e)
+    private void userBMIinfo_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void myHeight_Click(object sender, EventArgs e)
+    private void myHeight_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+    private void label1_Click(object sender, EventArgs e)
+       {
+
+       }
+
+    private void myHeightTextBox_TextChanged(object sender, EventArgs e)
+       {
+
+       }
+
+    private void calculatorBMIButton_Click(object sender, EventArgs e)
+    {
+        _myHeight = Convert.ToDouble(inputMyHeightTextBox.Text);
+        _myWeight = Convert.ToDouble(inputMyWeightTextBox.Text);
+
+            if (_myHeight<=0 && _myWeight<=0)
+            {
+                BMIResultTextBox.Text = "My Height and My Weight must be greater than 0";
+            }
+
+            if (imperialRadioButton.Checked)
+            {
+                bmiResult =703* _myWeight*2.21 / (39.37 * _myHeight*39.37 * _myHeight);
+                BMIResultTextBox.Text =$"{bmiResult:F2}";
+            }
+            else if (metircRadioButton.Checked)
+            {
+                bmiResult =  _myWeight / (_myHeight * _myHeight);
+                BMIResultTextBox.Text = $"{bmiResult:F2}";
+            }
+            
+        
+            
 
         }
-    }
+   }
+
 }
+
