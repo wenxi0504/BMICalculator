@@ -38,18 +38,19 @@ namespace BMICalculator
         }
 
     
-
+        
     private void calculatorBMIButton_Click(object sender, EventArgs e)
        {
         _myHeight = Convert.ToDouble(inputMyHeightTextBox.Text);
         _myWeight = Convert.ToDouble(inputMyWeightTextBox.Text);
-
+            //Step 1 Using if statement to check if the user input reasonable data
             if (_myHeight<=0 || _myWeight<=0)
             {
                 BMIScaleTextBox.Text = "My Height and My Weight must be greater than 0";
             }
             else
-            {
+            {   // Step 2 using if else statement to distinguish different formula between 
+                // imperial radio button and metric radio button
                 if (imperialRadioButton.Checked)
                 {
                     bmiResult = 703 * _myWeight * 2.21 / (39.37 * _myHeight * 39.37 * _myHeight);
@@ -60,25 +61,30 @@ namespace BMICalculator
                     bmiResult = _myWeight / (_myHeight * _myHeight);
                     BMIResultTextBox.Text = $"{bmiResult:F2}";
                 }
+                //Using if statement to display different outputs based on different BMI result
+                if (bmiResult < 18.5)
+                {  BMIScaleTextBox.BackColor=Color.HotPink;
+                    BMIScaleTextBox.Text = "Sorry, you are underweight !";
+                    
+                }
+                else if (bmiResult >= 18.5 && bmiResult < 25)
+                {
+                    BMIScaleTextBox.Text = "Congrats ,your weight is normal.";
+                }
+                else if (bmiResult >= 25 && bmiResult < 30)
+                {
+                    BMIScaleTextBox.BackColor = Color.Plum;
+                    BMIScaleTextBox.Text = "Sorry,you are overweight! ";
+                }
+                else
+                {
+                    BMIScaleTextBox.BackColor = Color.DarkRed;
+                    BMIScaleTextBox.Text = "Sorry,you are obese!";
+                }
+            }
 
-            }
-            if (bmiResult < 18.5)
-            {
-                BMIScaleTextBox.Text = "Sorry, you are underweight ";
-            }
-            else if (bmiResult >= 18.5 && bmiResult < 25)
-            {
-                BMIScaleTextBox.Text = "Congrats ,your weight is normal ";
-            }
-            else if (bmiResult >= 25 && bmiResult < 30)
-            {
-                BMIScaleTextBox.Text = "Sorry,you are overweight ";
-            }
-            else
-            {
-                BMIScaleTextBox.Text = "Sorry,you are obese";
-            }
         }
+            
     private void ResetButton_Click(object sender, EventArgs e)
     {
         inputMyHeightTextBox.Text = "";

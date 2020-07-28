@@ -213,10 +213,11 @@
             this.BMLScalelabel.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ResultPanel.SetColumnSpan(this.BMLScalelabel, 2);
             this.BMLScalelabel.ForeColor = System.Drawing.Color.White;
-            this.BMLScalelabel.Location = new System.Drawing.Point(3, 69);
+            this.BMLScalelabel.Location = new System.Drawing.Point(3, 72);
+            this.BMLScalelabel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.BMLScalelabel.Name = "BMLScalelabel";
             this.BMLScalelabel.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.BMLScalelabel.Size = new System.Drawing.Size(312, 39);
+            this.BMLScalelabel.Size = new System.Drawing.Size(295, 40);
             this.BMLScalelabel.TabIndex = 1;
             this.BMLScalelabel.Text = "BMI SCALE";
             this.BMLScalelabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
