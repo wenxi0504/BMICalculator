@@ -15,8 +15,6 @@ namespace BMICalculator
         // private variables
         private double _myHeight;
         private double _myWeight;
-        private double height;
-        private double weight;
         private double bmiResult=0;
         //public properties
         public double MyHeight 
@@ -84,7 +82,8 @@ namespace BMICalculator
             }
 
         }
-            
+        
+    // reset button click method to clear all data 
     private void ResetButton_Click(object sender, EventArgs e)
     {
         inputMyHeightTextBox.Text = "";
