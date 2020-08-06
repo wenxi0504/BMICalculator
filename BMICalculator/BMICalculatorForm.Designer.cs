@@ -146,7 +146,6 @@
             this.kglabel.TabIndex = 7;
             this.kglabel.Text = "KG";
             this.kglabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.kglabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // inputMyHeightTextBox
             // 
@@ -156,7 +155,6 @@
             this.inputMyHeightTextBox.Size = new System.Drawing.Size(138, 46);
             this.inputMyHeightTextBox.TabIndex = 8;
             this.inputMyHeightTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.inputMyHeightTextBox.TextChanged += new System.EventHandler(this.myHeightTextBox_TextChanged);
             // 
             // inputMyWeightTextBox
             // 
@@ -178,7 +176,6 @@
             this.BMIScaleTextBox.Name = "BMIScaleTextBox";
             this.BMIScaleTextBox.Size = new System.Drawing.Size(295, 53);
             this.BMIScaleTextBox.TabIndex = 3;
-            this.BMIScaleTextBox.TextChanged += new System.EventHandler(this.BMIScaleTextBox_TextChanged);
             // 
             // BMIResultTextBox
             // 
@@ -191,7 +188,6 @@
             this.BMIResultTextBox.Size = new System.Drawing.Size(318, 46);
             this.BMIResultTextBox.TabIndex = 2;
             this.BMIResultTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.BMIResultTextBox.TextChanged += new System.EventHandler(this.BMIResultTextBox_TextChanged);
             // 
             // calculatorBMIButton
             // 
@@ -204,7 +200,7 @@
             this.calculatorBMIButton.Name = "calculatorBMIButton";
             this.calculatorBMIButton.Size = new System.Drawing.Size(156, 37);
             this.calculatorBMIButton.TabIndex = 0;
-            this.calculatorBMIButton.Text = "CALCULATOR";
+            this.calculatorBMIButton.Text = "CALCULATE";
             this.calculatorBMIButton.UseVisualStyleBackColor = false;
             this.calculatorBMIButton.Click += new System.EventHandler(this.calculatorBMIButton_Click);
             // 
@@ -271,7 +267,6 @@
             this.Name = "BMICalculatorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BMICalculatorForm";
-            this.Load += new System.EventHandler(this.BMICalculatorForm_Load_1);
             this.BMIInfoPanel.ResumeLayout(false);
             this.BMIInfoPanel.PerformLayout();
             this.ResultPanel.ResumeLayout(false);

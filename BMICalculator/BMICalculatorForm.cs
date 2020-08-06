@@ -93,40 +93,6 @@ namespace BMICalculator
     }
     
 
-
-        private void BMICalculatorForm_Load_1(object sender, EventArgs e)
-        {
-            
-        }
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        private void userBMIinfo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        private void myHeight_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void myHeightTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void BMIResultTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void BMIScaleTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        
     }
 
 }
